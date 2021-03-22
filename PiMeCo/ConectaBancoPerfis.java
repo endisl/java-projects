@@ -14,7 +14,6 @@ import java.sql.*;
 import javax.swing.*;
 import java.awt.HeadlessException;
 
-
 public class ConectaBancoPerfis {
     
     
@@ -32,18 +31,6 @@ public class ConectaBancoPerfis {
         catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, e);
             return null;
-            
         } 
-         
-         
      }
-     
-     
-        
-     
-     
-    
-    
-    
-    
 }
