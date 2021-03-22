@@ -1,0 +1,535 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pimeco;
+
+import java.sql.*;
+import javax.swing.*;
+import net.proteanit.sql.DbUtils;
+
+
+/**
+ *
+ * @author Endi
+ */
+public class JDPerfisCadastrados extends javax.swing.JDialog {
+
+    /**
+     * Creates new form JDPerfisCadastrados
+     */
+    
+    //Variáveis Banco de Dados
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;    
+    
+            
+    
+    //Variável Look and Feel
+    private UIManager.LookAndFeelInfo[] looks;
+    
+    
+    
+    public JDPerfisCadastrados(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+        this.setLocationRelativeTo(null);
+        
+        //ENTER fecha a janela
+        jBOK.getRootPane().setDefaultButton(jBOK);
+        jBOK.requestFocusInWindow();
+        
+        conn = ConectaBancoPerfis.ConnecrDb();        
+        AtualizarTabelaU();        
+        AtualizarTabelaL();        
+        
+    }
+
+    
+    
+    
+    
+    public void mudaLookAndFeel(int index) 
+    {
+        looks = UIManager.getInstalledLookAndFeels();
+        try { UIManager.setLookAndFeel(looks[index].getClassName());
+              SwingUtilities.updateComponentTreeUI(this);} 
+        catch (Exception e) {
+            e.printStackTrace();}   
+    
+    }          
+    
+    
+    //Atualizar Tabela Perfis U
+    
+    private void AtualizarTabelaU()
+                
+        {
+            
+            String sql = "select * from perfisU";
+            
+            //String sql = "select id, bw, bf, t from perfisU";
+             
+             try{
+                 
+                 pst = conn.prepareStatement(sql);
+                                   
+                 rs = pst.executeQuery();
+                 
+                 Tabela_PerfisU.setModel(DbUtils.resultSetToTableModel(rs));                                  
+                  
+                 //Selecionar Primeira Linha da Tabela
+                 Tabela_PerfisU.setRowSelectionInterval(0, 0);               
+                 
+                 //Desabilitar ENTER em pular linha na Tabela                
+                 Tabela_PerfisU.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0), "Enter");                
+            
+                }
+        
+             catch(Exception e){
+            
+                JOptionPane.showMessageDialog(null, e);
+            
+                }
+             
+             finally{
+                 
+                 try{
+                 
+                    rs.close();    
+                     
+                    pst.close();                 
+            
+                }
+        
+                catch(Exception e){                        
+            
+                }
+                 
+             }                                
+                          
+        }
+    
+    
+    
+    //Atualizar Tabela Perfis L
+    
+    private void AtualizarTabelaL()
+                
+        {
+            
+            String sql = "select * from perfisL";
+            
+            //String sql = "select id, bw, bf, t from perfisU";
+             
+             try{
+                 
+                 pst = conn.prepareStatement(sql);
+                                   
+                 rs = pst.executeQuery();
+                 
+                 Tabela_PerfisL.setModel(DbUtils.resultSetToTableModel(rs));                                  
+                  
+                 //Selecionar Primeira Linha da Tabela
+                 Tabela_PerfisL.setRowSelectionInterval(0, 0);               
+                 
+                 //Desabilitar ENTER em pular linha na Tabela                
+                 Tabela_PerfisL.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0), "Enter");                
+            
+                }
+        
+             catch(Exception e){
+            
+                JOptionPane.showMessageDialog(null, e);
+            
+                }
+             
+             finally{
+                 
+                 try{
+                 
+                    rs.close();    
+                     
+                    pst.close();                 
+            
+                }
+        
+                catch(Exception e){                        
+            
+                }
+                 
+             }                                
+                          
+        }
+    
+    
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabela_PerfisU = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;   //Disallow the editing of any cell
+            }
+        };
+        jPdetalhe = new javax.swing.JPanel();
+        jLDetalhe = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Tabela_PerfisL = new javax.swing.JTable()
+        {
+            public boolean isCellEditable(int rowIndex, int colIndex) {
+                return false;
+            }
+        }
+        ;
+        jPdetalhe1 = new javax.swing.JPanel();
+        jLDetalhe1 = new javax.swing.JLabel();
+        jBOK = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Perfis Cadastrados");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Perfis :"));
+
+        Tabela_PerfisU.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        Tabela_PerfisU.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Tabela_PerfisU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tabela_PerfisUMouseClicked(evt);
+            }
+        });
+        Tabela_PerfisU.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Tabela_PerfisUKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Tabela_PerfisUKeyReleased(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Tabela_PerfisU);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPdetalhe.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Perfil U"));
+        jPdetalhe.setPreferredSize(new java.awt.Dimension(187, 217));
+
+        jLDetalhe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLDetalhe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/prf_U.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPdetalheLayout = new javax.swing.GroupLayout(jPdetalhe);
+        jPdetalhe.setLayout(jPdetalheLayout);
+        jPdetalheLayout.setHorizontalGroup(
+            jPdetalheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPdetalheLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLDetalhe)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPdetalheLayout.setVerticalGroup(
+            jPdetalheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPdetalheLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLDetalhe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPdetalhe, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPdetalhe, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Perfis :"));
+
+        Tabela_PerfisL.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        Tabela_PerfisL.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        Tabela_PerfisL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tabela_PerfisLMouseClicked(evt);
+            }
+        });
+        Tabela_PerfisL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Tabela_PerfisLKeyReleased(evt);
+            }
+        });
+        jScrollPane2.setViewportView(Tabela_PerfisL);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPdetalhe1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Perfil L"));
+        jPdetalhe1.setPreferredSize(new java.awt.Dimension(187, 217));
+
+        jLDetalhe1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLDetalhe1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/prf_L.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPdetalhe1Layout = new javax.swing.GroupLayout(jPdetalhe1);
+        jPdetalhe1.setLayout(jPdetalhe1Layout);
+        jPdetalhe1Layout.setHorizontalGroup(
+            jPdetalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 286, Short.MAX_VALUE)
+            .addGroup(jPdetalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPdetalhe1Layout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jLDetalhe1)
+                    .addContainerGap(14, Short.MAX_VALUE)))
+        );
+        jPdetalhe1Layout.setVerticalGroup(
+            jPdetalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPdetalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPdetalhe1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLDetalhe1, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        jBOK.setText("OK");
+        jBOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOKActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPdetalhe1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBOK)
+                .addGap(23, 23, 23))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPdetalhe1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jBOK)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void Tabela_PerfisUKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tabela_PerfisUKeyReleased
+
+        
+    }//GEN-LAST:event_Tabela_PerfisUKeyReleased
+
+    private void Tabela_PerfisUKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tabela_PerfisUKeyPressed
+
+        //KeyPressed NO  //KeyReleased YES  //Ndionson 23/01/2016
+
+    }//GEN-LAST:event_Tabela_PerfisUKeyPressed
+
+    private void Tabela_PerfisUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabela_PerfisUMouseClicked
+
+        
+    }//GEN-LAST:event_Tabela_PerfisUMouseClicked
+
+    private void jBOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOKActionPerformed
+
+        
+        this.dispose();
+
+    }//GEN-LAST:event_jBOKActionPerformed
+
+    private void Tabela_PerfisLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabela_PerfisLMouseClicked
+
+        
+    }//GEN-LAST:event_Tabela_PerfisLMouseClicked
+
+    private void Tabela_PerfisLKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Tabela_PerfisLKeyReleased
+
+       
+
+    }//GEN-LAST:event_Tabela_PerfisLKeyReleased
+
+        
+    
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(JDPerfilU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(JDPerfilU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(JDPerfilU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(JDPerfilU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                JDPerfisCadastrados dialog = new JDPerfisCadastrados(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);               
+                
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tabela_PerfisL;
+    public javax.swing.JTable Tabela_PerfisU;
+    private javax.swing.JButton jBOK;
+    private javax.swing.JLabel jLDetalhe;
+    private javax.swing.JLabel jLDetalhe1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPdetalhe;
+    private javax.swing.JPanel jPdetalhe1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    // End of variables declaration//GEN-END:variables
+
+         
+    
+}
