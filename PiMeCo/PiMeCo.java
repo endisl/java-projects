@@ -143,8 +143,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
     
     }     
     
-    
-    
+
     //Método: Esforço de compressão máximo nas barras PT
     
     public void EsforcoCompressaoPT()
@@ -283,8 +282,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                
     }
         
-    
-    
+
     // Método: Solicitações no Painel de Extremidade PC
     
     public void SolicPainelExtrem()
@@ -310,8 +308,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
     }
     
-    
-    
+
     // Método: Resistência das Chapas no Pianel de Extremidade PC
     
     public void ResChapasPainExt()
@@ -327,8 +324,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
     }
     
-    
-    
+
     // Método: Resistência do Banzo no Pianel de Extremidade PC
     
     public void ResBanzoPainExt()
@@ -345,9 +341,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
     }
     
-    
-    
-            
+      
     //Método: Esforço Cortante Máximo PT
     
     public void EsforcoCortante()
@@ -602,8 +596,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
             Aefbnc = befbncAA*tb*0.01 + 2*befbncAL*tb*0.01;            
         }
         
-        
-            // 1.4. Cálculo da força norma resistente de cálculo
+           // 1.4. Cálculo da força norma resistente de cálculo
         
         Nbyrdc = chibnc*Aefbnc*fy/1.2;
         
@@ -614,8 +607,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
     }
     
-    
-    
+   
     //Método: Resistência à Flambagem Fora do Plano do Banzo  PT / PC
     
     public void ResFlamForaPlanoBarraPT()
@@ -985,8 +977,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         }
         
         
-        
-                // 1.3.2. Área efetiva
+        // 1.3.2. Área efetiva
         
         if (befdAL==bdAL && befdAA==bdAA)
         {
@@ -1012,7 +1003,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         }                               
                         
         
-            // 1.4. Cálculo da força norma resistente de cálculo
+        // 1.4. Cálculo da força norma resistente de cálculo
         
         Ndrd = chid*Aefd*fy/1.2;
         
@@ -1252,7 +1243,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
     }   
     
     
-        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -3696,8 +3686,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                         obj1.jLdivt1.setText("= 1");
                     }      
 
-
-
+		    
                 // Resistência da ligação soldada
 
                     if (divl>1)
@@ -3747,12 +3736,11 @@ public class JFPiMeCo extends javax.swing.JFrame {
                 jLdivF.setText(" ");
                 
             }
-            
 
             }
         
-        
-        // JANELA COM CHAPAS
+
+	// JANELA COM CHAPAS
         
         else
         {
@@ -3775,12 +3763,9 @@ public class JFPiMeCo extends javax.swing.JFrame {
             ResBanzoPainExt();
             
              ResLigacaoPC();        
-                
-
-
+  
             jLdivF.setVisible(true); 
                       
-
 
             //Resultado Final
 
@@ -3826,8 +3811,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                         obj1.jLdivbf1.setText("= 1");
                     }
 
-                    
-                    
+                  
                 // Resistência Chapas Painel Extremidade
                     
                     // Cisalhamento
@@ -3870,8 +3854,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                     }
                     
                    
-                    
-                    
+                   
                 // Resistência Banzo Painel Extremidade
                     
                     // Flambagem, Banzo submetido à flexo-compressão
@@ -3893,9 +3876,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                         obj1.jLdivMNb.setText("= 1");
                     }    
                    
-                    
-                    
-                    
+                   
                 // Resistência da ligação soldada
 
                     if (divlc>1)
@@ -3946,22 +3927,13 @@ public class JFPiMeCo extends javax.swing.JFrame {
                 jLdivF.setText(" ");
                 
             }  
-
-
-               
-            
+         
         }
         
-        
-        
-        
-            
-        
-        
+       
     }//GEN-LAST:event_jBProcessarActionPerformed
 
-    
-    
+   
     private void jBResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResultadosActionPerformed
        
         if (jan==1 || jan==3 || jan==4 || jan==5) {
@@ -3975,7 +3947,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
             
             // JANELA PILAR TRELIÇADO
             
-        
             // Esforço de compressão       
                 
             String Ief$ = String.format("%.2f", Ief);
@@ -4076,7 +4047,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
                     obj1.jLdivbn1.setText("= 1");
                 }
                         
-
 
             // Resistência à flambagem fora do plano do banzo
 
@@ -4371,7 +4341,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
             obj1.jTNtsdl.setText(Ntsdl$);                      
             
             obj1.jTdivl.setText(divl$); 
-            
 
             if (divl>1)
             {
@@ -4396,15 +4365,10 @@ public class JFPiMeCo extends javax.swing.JFrame {
                                   
             
             obj1.jLdivF.setText(jLdivF.getText());              
-                        
-            
-            
-            
+      
         }
         
-        
-        
-        
+       
         // JANELA PILAR COM CHAPAS DE LIGAÇÃO
         
         
@@ -4461,8 +4425,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                 obj1.jLRC1.setText("> ");
             }
                
-            
-            
+           
             // Resistência à flambagem no plano do banzo
 
             String Lxb$ = String.format("%.2f", Lxbnc);
@@ -4540,7 +4503,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
                 }
                         
 
-
             // Resistência à flambagem fora do plano do banzo
 
             String Lxbf$ = String.format("%.2f", Lxbfc);
@@ -4598,8 +4560,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
             obj1.jTdivbf.setText(divbf$);
 
             obj1.jTNbsdf.setText(Nbsdf$);
-            
-            
+                   
             if (divbfc>1)
                 {
                     obj1.jLdivbf.setText("NÃO ACEITO !");
@@ -4617,8 +4578,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                 obj1.jLdivbf1.setText("= 1");
             }
             
-                        
-            
+         
             // Solicitações no Painel de Extremidade
 
             
@@ -4729,9 +4689,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
                     obj1.jLdivMNb1.setText("= 1");
                 }
                 
-                
-                
-                
+              
             // Resistência da Ligação soldada Chapa - Banzo
             
             String Lfc$ = String.format("%.2f", Lfc);
@@ -4775,28 +4733,12 @@ public class JFPiMeCo extends javax.swing.JFrame {
             // Resultado Final
                                   
             obj1.jLdivF.setText(jLdivF.getText());      
-                
-            
-            
-            
+                        
         }
         
-            
-        
 
-            
-        
-        
-        
-        
-        
-        
     }//GEN-LAST:event_jBResultadosActionPerformed
 
-    
-    
-    
-    
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -4833,8 +4775,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jBclrch.setEnabled(false);
         
         jBResultados.setEnabled(false);
-        
-        
+     
         jTbfd.setEnabled(false); jTbwd.setEnabled(false); jTtd.setEnabled(false); jTrid.setEnabled(false); jTAd.setEnabled(false);
         jTIxd.setEnabled(false); jTIyd.setEnabled(false); jTxgd.setEnabled(false); jTItd.setEnabled(false); jTIwd.setEnabled(false);
         jTrod.setEnabled(false); jTxod.setEnabled(false); jTmd.setEnabled(false); jTWxd.setEnabled(false); jTWyd.setEnabled(false);
@@ -4864,8 +4805,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBclrmActionPerformed
 
-    
-    
+  
     // Janela Pilar N-shape
     
     private void jBpNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpNActionPerformed
@@ -4962,8 +4902,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jLdivF.setText(" ");
                 
-                        
-        
+       
     }//GEN-LAST:event_jBpCActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -4996,8 +4935,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
-        
+      
         jTn.setText(" ");
         
         jThc.setText(" "); 
@@ -5009,7 +4947,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jLdivF.setText(" ");
         
-                
         
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -5038,13 +4975,11 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);
-        
-        
+             
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
-        
+               
         jTn.setText(" ");
         
         jThc.setText(" "); 
@@ -5056,8 +4991,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jLdivF.setText(" ");
         
-                
-        
+                       
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -5085,13 +5019,11 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);
-        
-        
+             
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
-        
+              
         jTn.setText(" ");
         
         jThc.setText(" "); 
@@ -5102,7 +5034,6 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jBResultados.setEnabled(false);
         
         jLdivF.setText(" ");        
-        
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -5451,8 +5382,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jBprfd.setEnabled(true); jBclrd.setEnabled(true);
         jBprfm.setEnabled(true); jBclrm.setEnabled(true);
         
-        
-        
+      
     }//GEN-LAST:event_jRBLdActionPerformed
 
     private void jRBLmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBLmActionPerformed
@@ -5460,8 +5390,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jRBLd.setSelected(true);
         
         jTn.setText("2");
-        
-        
+    
         jTbfd.setEnabled(true); jTbwd.setEnabled(true); jTtd.setEnabled(true); jTrid.setEnabled(true); jTAd.setEnabled(true);
         jTIxd.setEnabled(true); jTIyd.setEnabled(true); jTxgd.setEnabled(true); jTItd.setEnabled(true); jTIwd.setEnabled(true);
         jTrod.setEnabled(true); jTxod.setEnabled(true); jTmd.setEnabled(true); jTWxd.setEnabled(true); jTWyd.setEnabled(true);
@@ -5480,8 +5409,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jRBUm.setSelected(true);
         
         jTn.setText("1");
-        
-        
+       
         jTbfd.setEnabled(true); jTbwd.setEnabled(true); jTtd.setEnabled(true); jTrid.setEnabled(true); jTAd.setEnabled(true);
         jTIxd.setEnabled(true); jTIyd.setEnabled(true); jTxgd.setEnabled(true); jTItd.setEnabled(true); jTIwd.setEnabled(true);
         jTrod.setEnabled(true); jTxod.setEnabled(true); jTmd.setEnabled(true); jTWxd.setEnabled(true); jTWyd.setEnabled(true);
@@ -5500,8 +5428,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jRBUd.setSelected(true);
         
         jTn.setText("1");
-        
-        
+     
         jTbfd.setEnabled(true); jTbwd.setEnabled(true); jTtd.setEnabled(true); jTrid.setEnabled(true); jTAd.setEnabled(true);
         jTIxd.setEnabled(true); jTIyd.setEnabled(true); jTxgd.setEnabled(true); jTItd.setEnabled(true); jTIwd.setEnabled(true);
         jTrod.setEnabled(true); jTxod.setEnabled(true); jTmd.setEnabled(true); jTWxd.setEnabled(true); jTWyd.setEnabled(true);
@@ -5522,8 +5449,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jLPilar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/Pilar treliçado N-shape.jpg")));
         
         jLDetalhe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/Detalhe N-shape.jpg")));
-        
-        
+       
         jTbfd.setEnabled(false); jTbwd.setEnabled(false); jTtd.setEnabled(false); jTrid.setEnabled(false); jTAd.setEnabled(false);
         jTIxd.setEnabled(false); jTIyd.setEnabled(false); jTxgd.setEnabled(false); jTItd.setEnabled(false); jTIwd.setEnabled(false);
         jTrod.setEnabled(false); jTxod.setEnabled(false); jTmd.setEnabled(false); jTWxd.setEnabled(false); jTWyd.setEnabled(false);
@@ -5540,13 +5466,11 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);        
-        
-        
+      
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
-        
+               
         jTn.setText(" ");
         
         jThc.setText(" "); 
@@ -5586,11 +5510,9 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);
         
-        
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
         
         jTn.setText(" ");
         
@@ -5630,12 +5552,10 @@ public class JFPiMeCo extends javax.swing.JFrame {
         
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);
-        
-        
+         
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
         
         jTn.setText(" ");
         
@@ -5657,8 +5577,7 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jLPilar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/X-shape.jpg")));
         
         jLDetalhe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens_pmc/X-shape_det.jpg")));
-        
-        
+         
         jTbfd.setEnabled(false); jTbwd.setEnabled(false); jTtd.setEnabled(false); jTrid.setEnabled(false); jTAd.setEnabled(false);
         jTIxd.setEnabled(false); jTIyd.setEnabled(false); jTxgd.setEnabled(false); jTItd.setEnabled(false); jTIwd.setEnabled(false);
         jTrod.setEnabled(false); jTxod.setEnabled(false); jTmd.setEnabled(false); jTWxd.setEnabled(false); jTWyd.setEnabled(false);
@@ -5676,11 +5595,9 @@ public class JFPiMeCo extends javax.swing.JFrame {
         jRBLd.setSelected(false); jRBLm.setSelected(false);
         jRBUd.setSelected(false); jRBUm.setSelected(false);
         
-        
         jThc.setEnabled(false);
         jTec.setEnabled(false);
         jBclrch.setEnabled(false);
-        
         
         jTn.setText(" ");
         
