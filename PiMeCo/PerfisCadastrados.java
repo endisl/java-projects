@@ -9,7 +9,6 @@ import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
 
-
 /**
  *
  * @author Endi
@@ -24,14 +23,10 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement pst = null;    
-    
-            
-    
+
     //Variável Look and Feel
     private UIManager.LookAndFeelInfo[] looks;
-    
-    
-    
+
     public JDPerfisCadastrados(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -47,10 +42,6 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
         
     }
 
-    
-    
-    
-    
     public void mudaLookAndFeel(int index) 
     {
         looks = UIManager.getInstalledLookAndFeels();
@@ -60,7 +51,6 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
             e.printStackTrace();}   
     
     }          
-    
     
     //Atualizar Tabela Perfis U
     
@@ -112,8 +102,7 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
                           
         }
     
-    
-    
+
     //Atualizar Tabela Perfis L
     
     private void AtualizarTabelaL()
@@ -164,8 +153,7 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
                           
         }
     
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -466,9 +454,7 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
 
     }//GEN-LAST:event_Tabela_PerfisLKeyReleased
 
-        
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -508,7 +494,6 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
                     }
                 });
                 dialog.setVisible(true);               
-                
             }
         });
     }
@@ -529,7 +514,4 @@ public class JDPerfisCadastrados extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
-
-         
-    
 }
