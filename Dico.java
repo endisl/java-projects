@@ -6,31 +6,31 @@
  * @version 1.00
  */
 
-/* O Dico Animado permite encontrar a definiÁ„o de uma palavra e ver a imagem da mesma com animaÁ„o. 
-   Pode ser uma maneira l˙dica de aprendizagem de novos voc·bulos.
-   As principais caracterÌsticas da interface :
-   - Possibilidade de digitar uma palavra sem se preocupar com maÌuscula e min˙scula, e tambÈm sem se preocupar com os espaÁos no inicio e/ou no final da palavra
-     Exemplo : "Casa", "casa" e "CaSa" retornar„o a mesma definiÁ„o.
-               " ponte", "ponte  " e "  ponte  " retornar„o a mesma definiÁ„o.     
-   - O usu·rio È convidado a clicar sempre no bot„o "Validar" ou dar "Enter" para validar a palavra digitada.     
+/* O Dico Animado permite encontrar a defini√ß√£o de uma palavra e ver a imagem da mesma com anima√ß√£o. 
+   Pode ser uma maneira l√∫dica de aprendizagem de novos voc√°bulos.
+   As principais caracter√≠sticas da interface :
+   - Possibilidade de digitar uma palavra sem se preocupar com mai√∫scula e min√∫scula, e tamb√©m sem se preocupar com os espa√ßos no inicio e/ou no final da palavra
+     Exemplo : "Casa", "casa" e "CaSa" retornar√£o a mesma defini√ß√£o.
+               " ponte", "ponte  " e "  ponte  " retornar√£o a mesma defini√ß√£o.     
+   - O usu√°rio √© convidado a clicar sempre no bot√£o "Validar" ou dar "Enter" para validar a palavra digitada.     
    - A interface exibe 3 mensagens de aviso :
      Duas delas depois de aparecer, a interface volta ao seu estado inicial.
-     Uma outra depois de aparecer, a interface È parcialmente limpada deixando ao usu·rio a possibilidade de validar a palavra que digitou.
+     Uma outra depois de aparecer, a interface √© parcialmente limpada deixando ao usu√°rio a possibilidade de validar a palavra que digitou.
    - Possibilidade de mudar o visual da interface.
-   - Possibilidade de ativar ou desativar a animaÁ„o da imagem exibida.
-   - A caixa de escolha È uma alternativa mais r·pida para a entrada das palavras na caixa de texto, basta clicar na palavra escolhida.   
+   - Possibilidade de ativar ou desativar a anima√ß√£o da imagem exibida.
+   - A caixa de escolha √© uma alternativa mais r√°pida para a entrada das palavras na caixa de texto, basta clicar na palavra escolhida.   
  */
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-//criando a interface gr·fica que contem todos os elementos e que implementa a aÁ„o na prÛpria classe
+//criando a interface gr√°fica que contem todos os elementos e que implementa a a√ß√£o na pr√≥pria classe
 
 public class Dico extends JFrame implements ActionListener, MouseListener {
 	
-	//definiÁ„o dos elementos da GUI
-	private JPanel p1,p2,p3,p4,p5;
+    //defini√ß√£o dos elementos da GUI
+    private JPanel p1,p2,p3,p4,p5;
     private JLabel l1,l2,l3,l4,l5,l6;
     private JTextField tf1,tf2;
     private JMenuBar b1;
@@ -42,30 +42,30 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     private JComboBox box1;
     private JButton btn1;
 
-    //String para cada opÁ„o do JComboBox	    	
-    private String categ[]={"Avi„o","Casa","Estrada","Olho","Ponte"};
+    //String para cada op√ß√£o do JComboBox	    	
+    private String categ[]={"Avi√£o","Casa","Estrada","Olho","Ponte"};
     	
-    //definiÁ„o dos campos da classe de modo que todos os elementos da interface s„o declarados aqui
+    //defini√ß√£o dos campos da classe de modo que todos os elementos da interface s√£o declarados aqui
     public Dico() 
     {       	
     	
-    	setTitle("Dico Animado"); //tÌtulo da interface
+    	setTitle("Dico Animado"); //t√≠tulo da interface
     	
-    	//colocando o Ìcone na barra de tÌtulo
+    	//colocando o √≠cone na barra de t√≠tulo
     	Toolkit kit = Toolkit.getDefaultToolkit();  
 		Image img = kit.getImage("../TrabalhoPC2/dico.png");  
 		setIconImage(img);    	   	
     	
-    	setLocation(20,20); //localizaÁ„o inicial da interface    	
-    	setSize(750,280); //dimensıes da interface    	        	
-    	setDefaultCloseOperation(EXIT_ON_CLOSE); //bot„o fechar termina o programa     	   	
+    	setLocation(20,20); //localiza√ß√£o inicial da interface    	
+    	setSize(750,280); //dimens√µes da interface    	        	
+    	setDefaultCloseOperation(EXIT_ON_CLOSE); //bot√£o fechar termina o programa     	   	
     	createContents(); //criar elementos da GUI    	    	
     	setVisible(true); //exibir a interface    	
     	
     }
     
         
-    //criaÁ„o dos JPanels e do JMenu
+    //cria√ß√£o dos JPanels e do JMenu
     
     private void createContents()
     {
@@ -75,11 +75,11 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	p3=createJPanel3(); //criando o JPanel3
     	p4=createJPanel4(); //criando o Jpanel4
     	p5=createJPanel5(); //criando o JPanel5 : engloba todos os JPanels    	
-    	createJMenu1(); //criando o mÈtodo para os menus
-    	add(p5); //adicionado o JPanel5 ‡ Janela
+    	createJMenu1(); //criando o m√©todo para os menus
+    	add(p5); //adicionado o JPanel5 √† Janela
     }
     
-    //criaÁ„o do JMenu
+    //cria√ß√£o do JMenu
     public void createJMenu1()
     {
     	
@@ -93,8 +93,8 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
 		//criando objetos dos sub JMenus    		    
     	mi1=new JMenuItem("Sair"); 
     	mi2=new JMenuItem("Default");
-    	mi3=new JMenuItem("AparÍncia 1");
-    	mi4=new JMenuItem("AparÍncia 2");
+    	mi3=new JMenuItem("Apar√™ncia 1");
+    	mi4=new JMenuItem("Apar√™ncia 2");
     	mi5=new JMenuItem("Sobre o Dico Animado");
 				
 		//adicionando tratamento de evento aos itens de menu
@@ -120,7 +120,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     		
     }
     
-    //criaÁ„o do JPanel p1
+    //cria√ß√£o do JPanel p1
     private JPanel createJPanel1()
     {
     	p1=new JPanel(); //criando efetivamente o JPanel p1
@@ -128,7 +128,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	//criando labels
     	l1=new JLabel("Digite a palavra");
     	l2=new JLabel("Procure a palavra");    
-    	l3=new JLabel("DefiniÁ„o");   	
+    	l3=new JLabel("Defini√ß√£o");   	
     	    	
     	p1.setLayout(new GridLayout(3,1)); //definindo o layout para o JPanel p1
         	 
@@ -140,7 +140,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	return p1; //retornando JPanel p1 com elementos    	    			
     }
     
-    //criaÁ„o do JPanel p2
+    //cria√ß√£o do JPanel p2
     private JPanel createJPanel2()
     {    	
     	p2=new JPanel(); //criando efetivamente o JPanel p2    	
@@ -152,9 +152,9 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	    	
     	tf1.addActionListener(this); //adicionando listener a caixa de texto
     	    	
-    	box1.addActionListener(this); //adicionando listener a caixa de combinaÁ„o    	
+    	box1.addActionListener(this); //adicionando listener a caixa de combina√ß√£o    	
     	 	
-    	tf2.setEditable(false); //caixa de texto n„o edit·vel
+    	tf2.setEditable(false); //caixa de texto n√£o edit√°vel
     	    	   	    	    	
     	p2.setLayout(new GridLayout(3,1)); //definindo o layout para o JPanel p2
     	
@@ -166,7 +166,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	return p2; //retornando JPanel p2 com elementos    
     }
     
-    //criaÁ„o do JPanel p3
+    //cria√ß√£o do JPanel p3
     private JPanel createJPanel3()
     {
     	
@@ -174,16 +174,16 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	    	
     	p3.setLayout(new FlowLayout()); //definindo o layout para o JPanel p3
     	
-    	//criando botıes de r·dio e label
-    	rbtn1=new JRadioButton("Ativar a animaÁ„o",true);
-    	rbtn2=new JRadioButton("Desativar a animaÁ„o",false);
+    	//criando bot√µes de r√°dio e label
+    	rbtn1=new JRadioButton("Ativar a anima√ß√£o",true);
+    	rbtn2=new JRadioButton("Desativar a anima√ß√£o",false);
     	l5=new JLabel("");
 		    	    	    	
-    	//agrupando os botıes de r·dio
+    	//agrupando os bot√µes de r√°dio
     	bg.add(rbtn1);
     	bg.add(rbtn2);    	   	
     	    	
-    	//adicionando listener aos botıes de r·dio
+    	//adicionando listener aos bot√µes de r√°dio
     	rbtn1.addActionListener(this);
     	rbtn2.addActionListener(this);
     	
@@ -195,14 +195,14 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	return p3; //retornando JPanel p3 com elementos    
     }
     
-    //criaÁ„o do JPanel p4
+    //cria√ß√£o do JPanel p4
     private JPanel createJPanel4()
     {
     	p4=new JPanel(); //criando efetivamente o JPanel p4
     	    	
-    	btn1=new JButton("Validar"); //criando bot„o
+    	btn1=new JButton("Validar"); //criando bot√£o
     	
-    	//adicionando listeners aos botıes  
+    	//adicionando listeners aos bot√µes  
     	btn1.addActionListener(this); 
     	btn1.addMouseListener(this);    	  	
         	    	
@@ -213,12 +213,12 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	return p4; //retornando JPanel p4 com elementos    	
     }
     
-    //criaÁ„o do JPanel p5 para inserir os JPanels
+    //cria√ß√£o do JPanel p5 para inserir os JPanels
     private JPanel createJPanel5()
     {    	
     	p5=new JPanel(); //criando efetivamente o JPanel p5
     	    	
-    	p5.setLayout(new BorderLayout(10,10)); //definindo o layout para o JPanel p5 e deixando espaÁo entre os componentes
+    	p5.setLayout(new BorderLayout(10,10)); //definindo o layout para o JPanel p5 e deixando espa√ßo entre os componentes
     	
     	//adicionando os paneis ao panel geral
     	p5.add(p1,BorderLayout.WEST);
@@ -232,17 +232,17 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     //tratamento de eventos
     public void actionPerformed(ActionEvent e)
     {
-    	int res=-1; //vari·vel auxiliar
+    	int res=-1; //vari√°vel auxiliar
     	
-    	//criando dois vetores de imagens que se encontram no mesmo diretÛrio que o arquivo .CLASS
+    	//criando dois vetores de imagens que se encontram no mesmo diret√≥rio que o arquivo .CLASS
     	
-    	Icon imagem1[]={new ImageIcon(getClass().getResource("avi„o.gif")),
+    	Icon imagem1[]={new ImageIcon(getClass().getResource("avi√£o.gif")),
     					new ImageIcon(getClass().getResource("casa.gif")),
     					new ImageIcon(getClass().getResource("estrada.gif")),
     					new ImageIcon(getClass().getResource("olho.gif")),
     					new ImageIcon(getClass().getResource("ponte.gif"))};
     					   		
-    	Icon imagem2[]={new ImageIcon(getClass().getResource("avi„o.png")),
+    	Icon imagem2[]={new ImageIcon(getClass().getResource("avi√£o.png")),
     					new ImageIcon(getClass().getResource("casa.png")),
     					new ImageIcon(getClass().getResource("estrada.png")),
     					new ImageIcon(getClass().getResource("olho.png")),
@@ -250,42 +250,42 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	    		   		
     	
     	//criando o vetor de palavras
-    	String palavra[]={"avi„o","casa","estrada","olho","ponte"};
+    	String palavra[]={"avi√£o","casa","estrada","olho","ponte"};
     		
-    	//criando o vetor de definiÁıes
-    	String definicao[]={"VeÌculo aÈreo com asas geralmente impulsionado por um ou mais motores.",
-    	   					"PrÈdio ou parte dele onde uma pessoa ou uma famÌlia moram.",
-    	   					"Caminho p˙blico, largo, geralmente pavimentado e preparado para o tr‚nsito de veÌculos.",
-    	   					"Em uma pessoa ou animal, Ûrg„o que possibilita ver.",
-    	   					"ConstruÁ„o que liga dois lugares separados por curso de ·gua ou depress„o de terreno."};
+    	//criando o vetor de defini√ß√µes
+    	String definicao[]={"Ve√≠culo a√©reo com asas geralmente impulsionado por um ou mais motores.",
+    	   					"Pr√©dio ou parte dele onde uma pessoa ou uma fam√≠lia moram.",
+    	   					"Caminho p√∫blico, largo, geralmente pavimentado e preparado para o tr√¢nsito de ve√≠culos.",
+    	   					"Em uma pessoa ou animal, √≥rg√£o que possibilita ver.",
+    	   					"Constru√ß√£o que liga dois lugares separados por curso de √°gua ou depress√£o de terreno."};
     	
     	
-    	//atribuindo o conte˙do das caixas de texto as vari·veis string
+    	//atribuindo o conte√∫do das caixas de texto as vari√°veis string
     	String str1=tf1.getText();    			   			   		    		    			
     	String str2=tf2.getText();
     	
-    	String str3=str1.trim(); //ignorando os espaÁos no inÌcio e no final da string
+    	String str3=str1.trim(); //ignorando os espa√ßos no in√≠cio e no final da string
     	
-    	//-- Evento para o bot„o Validar --//
+    	//-- Evento para o bot√£o Validar --//
     	    	
     	if((e.getSource()==btn1) || (e.getSource()==tf1))
     	{   		   			   			   		    		    			
-    		//laÁo para obter o Ìndice da palavra digitada dentro do vetor    		    			    			    			    			
+    		//la√ßo para obter o √≠ndice da palavra digitada dentro do vetor    		    			    			    			    			
     		for(int i=0;i<palavra.length;i++)
     		{
-    		 	if(str3.equalsIgnoreCase(palavra[i])) //comparaÁ„o entre duas strings n„o levando em conta mai˙scula e min˙scula
+    		 	if(str3.equalsIgnoreCase(palavra[i])) //compara√ß√£o entre duas strings n√£o levando em conta mai√∫scula e min√∫scula
     		 	{
-    		 		res=i; //atualiza a vari·vel auxiliar com o Ìndice da palavara digitada dentro do vetor
-    		 		break; //interrompe o laÁo   			 	    			 	
+    		 		res=i; //atualiza a vari√°vel auxiliar com o √≠ndice da palavara digitada dentro do vetor
+    		 		break; //interrompe o la√ßo   			 	    			 	
     		 	}
     		
     		}
     		    		
-    		//condiÁ„o que analisa o texto entrado na caixa de texto "Digite a palavra" e retorna resultados apropriados 
+    		//condi√ß√£o que analisa o texto entrado na caixa de texto "Digite a palavra" e retorna resultados apropriados 
     		if(res!=-1)	
     		{
-    			tf2.setText(definicao[res]); //atualiza a caixa de texto "DefiniÁ„o" com a definiÁ„o da palavra digitada
-    			//condiÁ„o para saber qual bot„o de r·dio est· selecionado j· no inÌcio e durante a execuÁ„o do programa
+    			tf2.setText(definicao[res]); //atualiza a caixa de texto "Defini√ß√£o" com a defini√ß√£o da palavra digitada
+    			//condi√ß√£o para saber qual bot√£o de r√°dio est√° selecionado j√° no in√≠cio e durante a execu√ß√£o do programa
     			if(rbtn1.isSelected()) 
     				l5.setIcon(imagem1[res]); //atualiza o label "Imagem" com a imagem animada
     			else if(rbtn2.isSelected())
@@ -297,16 +297,16 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     			{
     				l5.setIcon(null); //limpa o label "Imagem"
     				tf1.setText(""); //limpa a caixa de texto "Digite a palavra"
-    				tf2.setText(""); //limpa a caixa de texto "DefiniÁ„o
-    				JOptionPane.showMessageDialog(null,"Nenhuma palavra digitada.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a caixa de texto "Digite a palavra" n„o contiver nenhum car·ter ou contiver sÛ espaÁos
+    				tf2.setText(""); //limpa a caixa de texto "Defini√ß√£o
+    				JOptionPane.showMessageDialog(null,"Nenhuma palavra digitada.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a caixa de texto "Digite a palavra" n√£o contiver nenhum car√°ter ou contiver s√≥ espa√ßos
     			}
     			
     			else
     			{    				
     				l5.setIcon(null); //limpa o label "Imagem"
     				tf1.setText(""); //limpa a caixa de texto "Digite a palavra"
-    				tf2.setText(""); //limpa a caixa de texto "DefiniÁ„o
-    				JOptionPane.showMessageDialog(null,"Palavra '"+str1+"' n„o encontrada! Por favor consulte a lista de palavras disponÌveis.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a caixa de texto "Digite a palavra" contiver uma palavra n„o listada
+    				tf2.setText(""); //limpa a caixa de texto "Defini√ß√£o
+    				JOptionPane.showMessageDialog(null,"Palavra '"+str1+"' n√£o encontrada! Por favor consulte a lista de palavras dispon√≠veis.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a caixa de texto "Digite a palavra" contiver uma palavra n√£o listada
     				    				
     			}    			
     			
@@ -314,7 +314,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     		
     	}    	    	
     	
-    	//-- Evento para a caixa de combinaÁ„o --//
+    	//-- Evento para a caixa de combina√ß√£o --//
     	
     	if((e.getSource()==box1))
     	{
@@ -323,9 +323,9 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	}
     	    	   	
     	
-    	//-- Evento para o bot„o de r·dio Ativar a animaÁ„o --//
+    	//-- Evento para o bot√£o de r√°dio Ativar a anima√ß√£o --//
     	
-    	//laÁo para obter o Ìndice da palavra digitada dentro do vetor  
+    	//la√ßo para obter o √≠ndice da palavra digitada dentro do vetor  
     	if((e.getSource()==rbtn1))
     	{    		 			   			   		    		    			
     		    		    			    			    			    			
@@ -339,7 +339,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     		
     		}    		    		
     		
-    		//condiÁ„o para saber qual imagem mostrar de acordo com a palavra digitada
+    		//condi√ß√£o para saber qual imagem mostrar de acordo com a palavra digitada
     		if(res!=-1 && str2.equalsIgnoreCase(definicao[res]))	
     		{    				
     			l5.setIcon(imagem1[res]); //atualiza o label "Imagem" com a imagem animada					    			
@@ -350,23 +350,23 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     			{
     				l5.setIcon(null); //limpa o label "Imagem"
     				tf1.setText(""); //limpa a caixa de texto "Digite a palavra"
-    				tf2.setText(""); //limpa a caixa de texto "DefiniÁ„o     					
+    				tf2.setText(""); //limpa a caixa de texto "Defini√ß√£o     					
     			}
     					
     			else
     			{
     				l5.setIcon(null); //limpa o label "Imagem"
-    				tf2.setText(""); //limpa a caixa de texto "DefiniÁ„o  
-    				JOptionPane.showMessageDialog(null,"Valide primeiro a palavra digitada.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a palavra na caixa de texto "Digite a palavra" n„o for validada com o bot„o "Procurar"
+    				tf2.setText(""); //limpa a caixa de texto "Defini√ß√£o  
+    				JOptionPane.showMessageDialog(null,"Valide primeiro a palavra digitada.","Aviso",JOptionPane.WARNING_MESSAGE); //Retorna mensagem de aviso caso a palavra na caixa de texto "Digite a palavra" n√£o for validada com o bot√£o "Procurar"
     			}
     					
     		}    			
     		
     	}
 
-    	//-- Evento para o bot„o de r·dio Desativar a animaÁ„o --//
+    	//-- Evento para o bot√£o de r√°dio Desativar a anima√ß√£o --//
     	
-    	//Todos os coment·rios para o evento precedente : Ativar a animaÁ„o, valem tambÈm para este evento
+    	//Todos os coment√°rios para o evento precedente : Ativar a anima√ß√£o, valem tamb√©m para este evento
     	
     	if((e.getSource()==rbtn2))
     	{    	
@@ -428,7 +428,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     		p5.setBackground(null);
     	}
     	
-    	//-- Evento para o sub Menu Visual:AparÍncia1 --//
+    	//-- Evento para o sub Menu Visual:Apar√™ncia1 --//
     	
     	if((e.getSource()==mi3))
     	{    		
@@ -443,7 +443,7 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     		p5.setBackground(Color.WHITE);    		    		
     	}
     	
-    	//-- Evento para o sub Menu Visual:AparÍncia2 --//
+    	//-- Evento para o sub Menu Visual:Apar√™ncia2 --//
     	
     	if((e.getSource()==mi4))
     	{   
@@ -463,12 +463,12 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     	
     	if((e.getSource()==mi5))
     	{    		
-    		JOptionPane.showMessageDialog(null,"Trabalho de ProgramaÁ„o de Computadores II"+"\n"+"Unesp FEG"+"\n"+"Novembro de 2012","Sobre o Dico Animado",JOptionPane.PLAIN_MESSAGE); //Breve descriÁ„o do Programa
+    		JOptionPane.showMessageDialog(null,"Trabalho de Programa√ß√£o de Computadores II"+"\n"+"Unesp FEG"+"\n"+"Novembro de 2012","Sobre o Dico Animado",JOptionPane.PLAIN_MESSAGE); //Breve descri√ß√£o do Programa
     	}    	
     	    		
     }
     
-    //MÈtodos da interface MouseListener
+    //M√©todos da interface MouseListener
 	public void mousePressed(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e){}
 	public void mouseClicked(MouseEvent e){}
@@ -477,17 +477,17 @@ public class Dico extends JFrame implements ActionListener, MouseListener {
     public void mouseEntered(MouseEvent e)
     {
     	if (e.getSource()==btn1)
-     		btn1.setBackground(Color.CYAN); //muda a cor do fundo do bot„o "Validar"     	
+     		btn1.setBackground(Color.CYAN); //muda a cor do fundo do bot√£o "Validar"     	
    	}
     
-    //Metodo que trata o evento de saÌda do mouse  
+    //Metodo que trata o evento de sa√≠da do mouse  
    	public void mouseExited(MouseEvent e)
    	{
    		if (e.getSource()==btn1)
-     		btn1.setBackground(null); //limpa a cor do fundo do bot„o "Validar"     	
+     		btn1.setBackground(null); //limpa a cor do fundo do bot√£o "Validar"     	
    	}   	         	  
           
-    //criaÁ„o e teste da interface criada    
+    //cria√ß√£o e teste da interface criada    
     public static void main(String args[])
     {
     	Dico d1=new Dico();
