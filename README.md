@@ -14,6 +14,4 @@
    Testing a project with JUnit.
    
 5/ FullStack: Spring + Angular  
-   This project covers Entity Management, Relationship, and Mapping to Database (MySQL) using the Java Persistence API (JPA). It also dives into defining and creating API,   
-   exposing API Endpoints Over HTTP, and  handling HTTP Requests through API Endpoints. It covers testing API Endpoints (using an HTTP client and the browser DevTools). 
-   In the frontend it uses Angular components, Angular Forms, Angular Routing, Angular Services and Angular HTTP Communication.
+   This project covers Entity Management, Relationship, and Mapping to Database (MySQL) using the Java Persistence API (JPA). It also dives into defining and creating API, exposing API Endpoints Over HTTP, and  handling HTTP Requests through API Endpoints. It covers testing API Endpoints (using an HTTP client and the browser DevTools). In the frontend it uses Angular components, Angular Forms, Angular Routing, Angular Services and Angular HTTP Communication.
